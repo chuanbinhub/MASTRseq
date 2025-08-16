@@ -45,6 +45,8 @@ conda env create -f env.yaml
 conda activate mastrseq
 ```
 
+
+# Usage
 ### General Configuration
 
 ```python
@@ -58,81 +60,7 @@ STR_type = config["str_type"]
 REF_DIR = config["ref_dir"]
 ENV = "env.yaml"
 ```
-
-### Rule: all
-
-```python
-rule all:
-    input:
-        expand(f"{OUTPUT_DIR}/str_count/{{sample}}_allcounts.txt", sample=SAMPLES),
-        expand(f"{OUTPUT_DIR}/str_plot/{{sample}}_str_plot.pdf", sample=SAMPLES),
-        expand(f"{OUTPUT_DIR}/methylation_out/{{sample}}_flank_methyl.tsv", sample=SAMPLES)
-```
-
-### Rule: get_STRbam
-
-```python
-rule get_STRbam:
-    input:
-        bam = f"{INPUT_DIR}/{{sample}}.bam"
-    output:
-        f"{OUTPUT_DIR}/bam_by_STRtype/{{sample}}_{{STR_type}}.bam"
-    log:
-        f"{OUTPUT_DIR}/bam_by_STRtype/logs/{{sample}}_{{STR_type}}_extract.log"
-    conda:
-        ENV
-    shell:
-        "samtools view -h {input.bam} | "
-        "awk '{{if ($1 ~ /^@/ || $0 ~ /STR_MARK/) print $0}}' | "
-        "samtools view -b -o {output} - ; "
-        "echo 'STR BAM extraction done' > {log}"
-```
-
-### Rule: count_STR
-
-```python
-rule count_STR:
-    input:
-        bam = f"{OUTPUT_DIR}/bam_by_STRtype/{{sample}}_{{STR_type}}.bam"
-    output:
-        f"{OUTPUT_DIR}/str_count/{{sample}}_allcounts.txt"
-    conda:
-        ENV
-    script:
-        "scripts/str_counter.py"
-```
-
-### Rule: plot_STR
-
-```python
-rule plot_STR:
-    input:
-        f"{OUTPUT_DIR}/str_count/{{sample}}_allcounts.txt"
-    output:
-        f"{OUTPUT_DIR}/str_plot/{{sample}}_str_plot.pdf"
-    conda:
-        ENV
-    script:
-        "scripts/plot_STR_distribution.py"
-```
-
-### Rule: methylation_flank
-
-```python
-rule methylation_flank:
-    input:
-        bam = f"{OUTPUT_DIR}/bam_by_STRtype/{{sample}}_{{STR_type}}.bam"
-    output:
-        f"{OUTPUT_DIR}/methylation_out/{{sample}}_flank_methyl.tsv"
-    conda:
-        ENV
-    script:
-        "scripts/plot_methylation_aroundSTR.py"
-```
-
 **Note**: The `methylation_inSTR` and `methylation_inSTR_plot` rules are excluded for the HTT STR type.
-
-# Usage
 
 Set up your `config.yaml` by adjusting:
 sample names, 
