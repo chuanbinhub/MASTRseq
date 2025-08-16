@@ -72,7 +72,7 @@ rule str_count_plot:
 
 rule methylation_aroundSTR:
     input:
-        bam = lambda wildcards: f"{INPUT_DIR}/{wildcards.sample}.bam",
+        bam = lambda wildcards: f"{INPUT_DIR}/{wildcards.sample}.sorted.bam",
         counts = f"{OUTPUT_DIR}/str_count/{{sample}}_allcounts.txt"
     output:
         tsv = f"{OUTPUT_DIR}/methylation_aroundSTR/{{sample}}_filtered_extractCpG.tsv"
