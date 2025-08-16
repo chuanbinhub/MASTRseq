@@ -1,0 +1,33 @@
+# Replace with desired sample names
+samples:
+  - FXS_1   
+
+input_dir: Input/aligned_bam_files
+output_dir: results/mastrseq_run
+
+# Reference genome directory
+# Add genome reference FASTA file (e.g., hg38.fa) into this folder
+ref_dir: reference  
+
+# STR type options: "FMR1", "C9ORF72", "HTT"
+str_type: "FMR1"
+
+# STR sequence motif depending on type
+# - CGG for FMR1
+# - CAG for HTT
+# - GGCCCC for C9ORF72
+str_seq: CGG
+
+# Threshold for methylation density filtering
+# Recommended values:
+# - 0.6 for ALS C9ORF72 (G4C2)
+# - 0.6 for FXS FMR1 (CGG)
+# - 0.6 for HTT (CAG)
+methylation_threshold: 0.6
+
+# Mutation length threshold
+# Leave as "" to disable length stratification
+# Example recommended values:
+# - 30 for ALS C9ORF72 (G4C2)
+# - 45 for FXS FMR1 (CGG)
+mutation_len_threshold: 45
