@@ -5,7 +5,7 @@ This Snakemake pipeline supports STR counting, methylation profiling analysis fo
 ### Conda Environment Setup
 Snakemake requires Conda version 24.7.1 or later.  
 Create a conda environment using the following `env.yaml`:
-## Pre-installation
+### Pre-installation
 
 Currently, the ont-modkit package (version 0.5.0), a bioinformatics tool for analyzing modified bases from Oxford Nanopore, is distributed via Bioconda for the following platforms: linux-64, osx-64 (Intel-based macOS), and linux-aarch64. There is no osx-arm64 (Apple Silicon) build available at this time.
 For macOS Apple Silicon users, modkit can be installed natively using the Cargo tool:
@@ -44,9 +44,7 @@ conda env create -f env.yaml
 conda activate mastrseq
 ```
 
-### -------Pipeline Rules description starting line-------###
-
-# General Configuration
+### General Configuration
 
 ```python
 # Load pipeline configuration
@@ -60,7 +58,7 @@ REF_DIR = config["ref_dir"]
 ENV = "env.yaml"
 ```
 
-# Rule: all
+### Rule: all
 
 ```python
 rule all:
@@ -70,7 +68,7 @@ rule all:
         expand(f"{OUTPUT_DIR}/methylation_out/{{sample}}_flank_methyl.tsv", sample=SAMPLES)
 ```
 
-# Rule: get_STRbam
+### Rule: get_STRbam
 
 ```python
 rule get_STRbam:
@@ -89,7 +87,7 @@ rule get_STRbam:
         "echo 'STR BAM extraction done' > {log}"
 ```
 
-# Rule: count_STR
+### Rule: count_STR
 
 ```python
 rule count_STR:
@@ -103,7 +101,7 @@ rule count_STR:
         "scripts/str_counter.py"
 ```
 
-# Rule: plot_STR
+### Rule: plot_STR
 
 ```python
 rule plot_STR:
@@ -117,7 +115,7 @@ rule plot_STR:
         "scripts/plot_STR_distribution.py"
 ```
 
-# Rule: methylation_flank
+### Rule: methylation_flank
 
 ```python
 rule methylation_flank:
@@ -131,10 +129,9 @@ rule methylation_flank:
         "scripts/plot_methylation_aroundSTR.py"
 ```
 
-> **Note**: The `methylation_inSTR` and `methylation_inSTR_plot` rules are excluded for the HTT STR type.
-### -------Pipeline Rules description ending line-------###
+**Note**: The `methylation_inSTR` and `methylation_inSTR_plot` rules are excluded for the HTT STR type.
 
-### ***Running the Pipeline*** ###
+# Running the Pipeline
 
 Make sure your `config.yaml` is set up correctly with sample names, input/output paths, reference directory, STR type (e.g., `HTT`, `FMR1`, or `C9orf72`), STR seq motif,methylation threshold and mutation length threshold. Then run:
 
