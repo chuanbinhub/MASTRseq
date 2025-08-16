@@ -78,7 +78,7 @@ snakemake --cores <NUM_CORES>
 <NUM_CORES> specifies the number of CPU cores for alignment.
 
 If you run sucessfully, you will see output files in <results>. look like this:
-
+```
 {OUTPUT_DIR}/str_count/{{sample}}_allcounts.txt
 {OUTPUT_DIR}/str_plot/{{sample}}_str_plot.pdf
 {OUTPUT_DIR}/methylation_aroundSTR/{{sample}}_filtered_extractCpG.tsv
@@ -96,7 +96,7 @@ If you run sucessfully, you will see output files in <results>. look like this:
 {OUTPUT_DIR}/logs/methylation_density_plot/{{sample}}.log
 {OUTPUT_DIR}/logs/methylation_inSTR/{{sample}}.log
 {OUTPUT_DIR}/logs/methylation_inSTR_plot/{{sample}}.log
-
+```
 
 
 
