@@ -66,7 +66,7 @@ Set up your `config.yaml` by adjusting:
 sample names, 
 input paths,
 output paths, 
-reference directory, 
+reference directory: path to the reference genome, e.g., ``` reference/hg39.fa ``` 
 STR type (e.g., `HTT`, `FMR1`, or `C9orf72`), 
 STR seq motif,
 methylation threshold, 
