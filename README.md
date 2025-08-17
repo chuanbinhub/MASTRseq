@@ -162,7 +162,7 @@ Chuanbin Su, Han-Seul Ryu, Keerthivasan Raanin Chandradoss, Thomas Malachowski, 
 DOI: [insert DOI link here](#) 
 
 # Limitations
-The **MASTR-seq Snakemake pipeline** has been developed and tested to accurately quantify simple repeats (e.g., **CGG, CAG, GGCCCC**).  
+The **MASTRseq snakemake pipeline** has been developed and tested to accurately quantify simple repeats (e.g., **CGG, CAG, GGCCCC**).  
 However, it currently cannot process **mixed repeats** composed of different motifs.
 
 # Contact Us
