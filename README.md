@@ -154,6 +154,22 @@ If you run sucessfully, you will see output files in <OUTPUT_DIR>. look like thi
 {OUTPUT_DIR}/logs/methylation_inSTR/{{sample}}.log
 {OUTPUT_DIR}/logs/methylation_inSTR_plot/{{sample}}.log
 ```
+# Citation
+If you use **MASTR-seq Snakemake pipeline**, please cite:  
+
+Chuanbin Su, Han-Seul Ryu, Keerthivasan Raanin Chandradoss, Thomas Malachowski, et al. MASTR-seq: Multiplexed Analysis of Short Tandem Repeats with sequencing.  
+*Updating…*  
+DOI: [insert DOI link here](#) 
+
+# Limitations
+The **MASTR-seq Snakemake pipeline** has been developed and tested to accurately quantify simple repeats (e.g., **CGG, CAG, GGCCCC**).  
+However, it currently cannot process **mixed repeats** composed of different motifs.
+
+# Contact Us
+If you need help, please [open an issue](../../issues) on the GitHub issue page.  
+You may also contact:  
+- **Dr. Chuanbin Su** (chuanbin@seas.upenn.edu)  
+- **Dr. Jennifer Cremins** (jcremins@seas.upenn.edu)  
 
 
 
