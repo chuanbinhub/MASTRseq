@@ -3,6 +3,10 @@
 This Snakemake pipeline supports short tandem repeats (STR) counting, methylation profiling analysis from nanopore long-read sequencing data.
 
 # Installation
+![License](https://img.shields.io/github/license/chuanbinhub/MASTR-seq-pipeline)
+![Snakemake](https://img.shields.io/badge/snakemake-≥7.0-brightgreen)
+![Conda](https://img.shields.io/badge/conda-env%20available-blue)
+![OS](https://img.shields.io/badge/platform-linux%20|%20macOS-lightgrey)
 
 #### Pre-installation(only required for osx-arm64)
 Currently, the ont-modkit package (version 0.5.0), a bioinformatics tool for analyzing modified bases from Oxford Nanopore, is distributed via Bioconda for the following platforms: linux-64, osx-64 (Intel-based macOS), and linux-aarch64. But, there is no osx-arm64 (Apple Silicon) build available at this time.
