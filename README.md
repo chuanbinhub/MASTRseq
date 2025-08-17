@@ -3,8 +3,7 @@
 This Snakemake pipeline supports short tandem repeats (STR) counting, methylation profiling analysis from nanopore long-read sequencing data.
 
 # Installation
-![License](https://img.shields.io/github/license/chuanbinhub/MASTR-seq-pipeline)
-![Snakemake](https://img.shields.io/badge/snakemake-≥7.0-brightgreen)
+![Snakemake](https://img.shields.io/badge/snakemake-≥24.0-brightgreen)
 ![Conda](https://img.shields.io/badge/conda-env%20available-blue)
 ![OS](https://img.shields.io/badge/platform-linux%20|%20macOS-lightgrey)
 
