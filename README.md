@@ -69,22 +69,24 @@ ENV = "env.yaml"
 
 ### Set up `config.yaml` 
 Adjust the following parameters in your config.yaml file:
-#### >Input samples, 
+#### - Input samples, 
 Place your sorted and indexed BAM files in the INPUT_DIR folder. File names must follow the format:
 ```
 {sample_name}.sorted.bam
 {sample_name}.sorted.bam.bai
 ```
-#### >output paths: e.g., ``` results/mastrseq_run ```  
-#### >reference directory: path to the reference genome, e.g., ``` reference/hg39.fa ``` 
-#### >STR type: (e.g., `FMR1`, `HTT`, or `C9ORF72`)
-#### >STR seq motif: (e.g., `CGG`, `CAG`, or `GGCCCC`) 
-#### >methylation threshold: 
+#### - output paths: e.g., ``` results/mastrseq_run ```  
+#### - reference directory: path to the reference genome, e.g., ``` reference/hg39.fa ``` 
+#### - STR type: (e.g., `FMR1`, `HTT`, or `C9ORF72`)
+#### - STR seq motif: (e.g., `CGG`, `CAG`, or `GGCCCC`) 
+#### - methylation threshold: 
 Recommended values: 0.6
 
-#### >mutation length threshold. 
-      Leave as "" to disable length stratification
-     Example recommended values: 30 for ALS C9ORF72 (G4C2); 45 for FXS FMR1 (CGG)
+#### - mutation length threshold. 
+     Leave as "" to disable length stratification
+     Example recommended values: 
+     30 for ALS C9ORF72 (G4C2) 
+     45 for FXS FMR1 (CGG)
 
 Then run the snakemake pipeline using the following commands:
 
