@@ -67,9 +67,15 @@ ENV = "env.yaml"
 ```
 **Note**: The `methylation_inSTR` and `methylation_inSTR_plot` rules are excluded for the HTT STR type.
 
-Set up your `config.yaml` by adjusting:
-sample names, 
-input paths,
+### Set up `config.yaml` 
+Adjust the following parameters in your config.yaml file:
+#### Input samples, 
+Place your sorted and indexed BAM files in the INPUT_DIR folder. File names must follow the format:
+```
+{sample_name}.sorted.bam
+{sample_name}.sorted.bam.bai
+```
+
 output paths, 
 reference directory: path to the reference genome, e.g., ``` reference/hg39.fa ``` 
 STR type (e.g., `HTT`, `FMR1`, or `C9orf72`), 
