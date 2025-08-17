@@ -76,12 +76,18 @@ Place your sorted and indexed BAM files in the INPUT_DIR folder. File names must
 {sample_name}.sorted.bam.bai
 ```
 
-output paths, 
-reference directory: path to the reference genome, e.g., ``` reference/hg39.fa ``` 
-STR type (e.g., `HTT`, `FMR1`, or `C9orf72`), 
-STR seq motif,
-methylation threshold, 
-mutation length threshold. Then run the snakemake pipeline using the following commands:
+#### output paths: e.g., ``` results/mastrseq_run ```  
+#### reference directory: path to the reference genome, e.g., ``` reference/hg39.fa ``` 
+#### STR type: (e.g., `FMR1`, `HTT`, or `C9ORF72`)
+#### STR seq motif: (e.g., `CGG`, `CAG`, or `GGCCCC`) 
+#### methylation threshold: 
+Recommended values: 0.6
+
+#### mutation length threshold. 
+##### Leave as "" to disable length stratification
+##### Example recommended values: 30 for ALS C9ORF72 (G4C2); 45 for FXS FMR1 (CGG)
+
+Then run the snakemake pipeline using the following commands:
 
 ```bash
 snakemake --cores <NUM_CORES>
