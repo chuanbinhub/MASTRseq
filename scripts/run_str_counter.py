@@ -91,7 +91,7 @@ def main():
         fetch_start = 147911000
         fetch_end = 147918000
         str_seq = 'CGG' #Please enter in forward sequence (e.g. 'GGCCCC' for C9orf72 G4C2 repeat)
-        min_fragment_len = 6900 #enter minimum length of expected Cas9 cleaved fragment
+        min_fragment_len = 5900 #enter minimum length of expected Cas9 cleaved fragment
         ## any read shorter than min_fragment_len will be discarded
 
         ## Would you like to filter for reads that include a highly accurate sequence around the STR? 
