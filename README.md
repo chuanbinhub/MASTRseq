@@ -181,8 +181,8 @@ However, it currently cannot process **mixed repeats** composed of different mot
 # Contact Us
 If you need help, please [open an issue](../../issues) on the GitHub issue page.  
 You may also contact:  
-- **Dr. Chuanbin Su** (chuanbin@seas.upenn.edu)  
-- **Dr. Jennifer Cremins** (jcremins@seas.upenn.edu)  
+- **Dr. Chuanbin Su** (su.c@wustl.edu)  
+- **Dr. Jennifer Cremins** (jennifer.cremins@wustl.edu)  
 
 
 
